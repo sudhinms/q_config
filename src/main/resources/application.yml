@@ -1,0 +1,47 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sudhinms/quiz-app-configs
+          repos:
+            dev-properities:
+              pattern: 'question/dev'
+              uri: https://github.com/sudhinms/quiz-app-configs
+              search-paths:
+                - questionApp
+#                - '{application}'
+              clone-on-start: true
+              force-pull: true
+
+            stage-properities:
+              pattern: 'quiz/stage'
+              uri: https://github.com/sudhinms/quiz-app-configs
+              search-paths:
+                - quizApp
+              #                - '{application}'
+              clone-on-start: true
+              force-pull: true
+
+encrypt:
+  key: mySecret
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+
+    fetch-registry: true
+    register-with-eureka: true
+
+
+# Logging
+logging:
+  file:
+    name: /home/sudhin/Downloads/MICROSERVICES/app-log/config/configServer.log
