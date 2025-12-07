@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8880
 
 spring:
   application:
@@ -32,16 +32,16 @@ spring:
 encrypt:
   key: mySecret
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8080/eureka
-
-    fetch-registry: true
-    register-with-eureka: true
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8080/eureka
+#
+#    fetch-registry: true
+#    register-with-eureka: true
 
 
 # Logging
-logging:
-  file:
-    name: /home/sudhin/Downloads/MICROSERVICES/app-log/config/configServer.log
+#logging:
+#  file:
+#    name: /home/sudhin/Downloads/MICROSERVICES/app-log/config/configServer.log
