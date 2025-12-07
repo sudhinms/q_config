@@ -7,7 +7,7 @@ pipeline {
   }
 
   environment {
-    IMAGE_REPO = "sudhinms/config-app"
+    IMAGE_REPO = "sudhinms/quiz-config-app"
   }
 
   stages {
