@@ -28,7 +28,7 @@ pipeline {
       steps {
         script {
           IMAGE_TAG = "${BUILD_NUMBER}"
-          FULL_IMAGE = "${IMAGE_REPO}:${IMAGE_TAG}"
+          FULL_IMAGE = "${IMAGE_REPO}:${IMAGE_TAG}:${BUILD_NUMBER}"
 
           // Build
           sh "docker build -t ${FULL_IMAGE} ."
@@ -46,7 +46,7 @@ pipeline {
   }
 
   post {
-    success { echo "Pipeline succeeded - pushed ${IMAGE_REPO}:${BUILD_NUMBER}" }
+    success { echo "Pipeline succeeded - pushed ${FULL_IMAGE}" }
     failure { echo "Pipeline failed." }
     always  { echo "Pipeline completed." }
   }
