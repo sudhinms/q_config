@@ -1,5 +1,5 @@
 # Use a minimal Java 21 runtime image
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jdk
 
 LABEL authors="sudhin"
 
