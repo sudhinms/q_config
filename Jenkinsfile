@@ -28,7 +28,7 @@ pipeline {
       steps {
         script {
           IMAGE_TAG = "${BUILD_NUMBER}"
-          FULL_IMAGE = "${IMAGE_REPO}:${IMAGE_TAG}:${BUILD_NUMBER}"
+          FULL_IMAGE = "${IMAGE_REPO}:${IMAGE_TAG}"
 
           // Build
           sh "docker build -t ${FULL_IMAGE} ."
