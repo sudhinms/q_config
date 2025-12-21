@@ -7,10 +7,8 @@ pipeline {
   }
 
   parameters {
-    string(name: 'VERSION', defaultValue: '', description: 'version to deploy')
-    choice(name: 'VERSION', choices: ['1.1.0', '1.1.1', '1.1.2'])
-    booleanParam(name: executeTests, defaultValue: false, description: 'decide whether to execute tests after build.')
-  }
+    choice(name: 'VERSION', choices: ['1.1.0', '1.1.1', '1.1.2'], description: 'Version to deploy')
+    booleanParam(name: 'executeTests', defaultValue: false, description: 'Run tests?')  }
 
   environment {
     IMAGE_REPO = "sudhinms/quiz-config-app"
