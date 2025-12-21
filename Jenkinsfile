@@ -25,7 +25,7 @@ pipeline {
     stage('Build') {
       when {
         expression {
-            (BRANCH_NAME == 'main' || BRANCH_NAME == 'master') && CODE_CHANGES == true
+            (env.GIT_BRANCH == 'main' || env.GIT_BRANCH == 'master') && CODE_CHANGES == true
         }
       }
       steps {
@@ -71,7 +71,7 @@ pipeline {
     failure { echo "Pipeline failed." }
     always  {
         echo "Pipeline completed."
-        echo "Commit from :: ${GIT_COMMITTER_NAME} built."
+        echo "Commit details :: ${env.GIT_COMMIT}"
         }
   }
 }
