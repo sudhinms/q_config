@@ -18,8 +18,8 @@ pipeline {
 
   stages {
     stage('Checkout') {
-      echo "Selected version ${params.VERSION}"
       steps {
+        echo "Selected version ${params.VERSION}"
         git branch: 'main', url: 'https://github.com/sudhinms/q_config.git'
       }
     }
@@ -36,13 +36,13 @@ pipeline {
     }
 
     stage('Test') {
-          echo "Testing stage..."
           when {
             expression {
                 params.executeTests == true
             }
           }
           steps {
+            echo "Testing stage..."
             echo "Testing in progress..."
           }
     }
